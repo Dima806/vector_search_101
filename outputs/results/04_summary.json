@@ -1,0 +1,16 @@
+{
+  "scratch_n": 20000,
+  "scratch_build_s": 50.699043171001904,
+  "scratch_work_at_20k": 988.9933333333333,
+  "scratch_share_at_20k": 0.04944966666666667,
+  "scratch_recall_at_20k": 0.9776666666666669,
+  "faiss_clustered_share_at_200k": 0.0030678833333333336,
+  "faiss_clustered_recall_at_200k": 0.9890000000000001,
+  "recall_ef10_m16": 0.8233333333333334,
+  "recall_ef256_m16": 0.9990000000000001,
+  "bytes_per_vector_m16": 1680.2432,
+  "exact_bytes_per_vector": 1536,
+  "max_recall_gap_vs_hnswlib": 0.003666666666666707,
+  "hnswlib_build_s": 2.986941585999375,
+  "runtime_s": 218.42972395700053
+}

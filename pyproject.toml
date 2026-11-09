@@ -1,0 +1,114 @@
+[project]
+name = "vector-search-101"
+version = "0.1.0"
+description = "Vector Search 101: exact nearest-neighbor is perfect, and that is exactly why it does not scale"
+readme = "README.md"
+license = "Apache-2.0"
+requires-python = ">=3.11"
+authors = [{ name = "Dmytro Iakubovskyi" }]
+keywords = [
+    "vector-search",
+    "nearest-neighbor",
+    "approximate-nearest-neighbor",
+    "hnsw",
+    "product-quantization",
+    "inverted-file",
+    "faiss",
+]
+dependencies = [
+    "faiss-cpu>=1.8",
+    "hnswlib>=0.8",
+    "sentence-transformers>=3.0",
+    # Declared explicitly (it is a sentence-transformers dependency) so [tool.uv.sources]
+    # can pin it to the CPU wheel: uv ignores sources for transitive dependencies.
+    "torch>=2.4",
+    "numpy>=1.26",
+    "scipy>=1.14",
+    "scikit-learn>=1.5",
+    # BLAS thread pinning for fair benchmarks (src/evaluation/speed.py); comes with scikit-learn.
+    "threadpoolctl>=3.5",
+    "pandas>=2.2",
+    "matplotlib>=3.9",
+    "plotly>=5.22",
+    "streamlit>=1.38",
+    "pydantic>=2.9",
+    "pydantic-settings>=2.5",
+    "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.3",
+    "pytest-cov>=5.0",
+    "ruff>=0.8",
+    "ty>=0.0.1a7",
+    "jupyter>=1.1",
+    "ipykernel>=6.29",
+    "nbconvert>=7.16",
+    "nbclient>=0.10",
+]
+
+[project.urls]
+Homepage = "https://github.com/Dima806/vector_search_101"
+Repository = "https://github.com/Dima806/vector_search_101"
+
+# ---------------------------------------------------------------------------
+# Build: the import package is literally `src` (`from src.indexes import ...`).
+# Installing it editable makes that work from any working directory, which
+# matters because nbconvert runs each notebook with notebooks/ as the cwd,
+# Streamlit puts app/ on sys.path and pytest puts tests/ on sys.path.
+# ---------------------------------------------------------------------------
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src"]
+
+# ---------------------------------------------------------------------------
+# CPU-only torch. On PyPI the default linux/windows torch wheel drags in the
+# CUDA runtime (~15 nvidia-* packages, several GB), which breaks the 2-CPU /
+# 8 GB Codespace budget and contradicts the no-GPU constraint. macOS wheels on
+# PyPI are already CPU-only, so they stay on the default index.
+# ---------------------------------------------------------------------------
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
+
+[tool.uv.sources]
+torch = [
+    { index = "pytorch-cpu", marker = "sys_platform == 'linux'" },
+    { index = "pytorch-cpu", marker = "sys_platform == 'win32'" },
+]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 99
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "N", "B", "A", "SIM", "PTH"]
+ignore = ["E501"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-v --tb=short --strict-markers"
+markers = [
+    "slow: takes more than a few seconds (index builds on larger fixtures, size ladders)",
+    "network: needs the Hugging Face Hub; deselected by `make test-offline`",
+]
+
+[tool.coverage.run]
+source = ["src"]
+branch = true
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "if TYPE_CHECKING:",
+    "raise NotImplementedError",
+    "if __name__ == .__main__.:",
+]

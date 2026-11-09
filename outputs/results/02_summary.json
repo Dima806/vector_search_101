@@ -1,0 +1,11 @@
+{
+  "news_recall_nprobe1": 0.4233,
+  "news_recall_nprobe16": 0.8887999999999999,
+  "news_recall_full_probe": 1.0,
+  "news_first_nprobe_reaching_0.9": 32,
+  "news_work_speedup_at_that_nprobe": 7.436048864359181,
+  "news_faiss_speedup_at_that_nprobe": 8.490733791518846,
+  "clustered_recall_nprobe4": 0.9999,
+  "isotropic_recall_nprobe4": 0.10920000000000002,
+  "runtime_s": 126.52133595800024
+}

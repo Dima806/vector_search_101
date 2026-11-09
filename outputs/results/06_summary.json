@@ -1,0 +1,11 @@
+{
+  "exact_ms_smallest": 0.2801635000651004,
+  "exact_ms_largest": 9.82039500013343,
+  "hnsw_ms_largest": 0.05596050050371559,
+  "ivf_ms_largest": 0.12473449987737695,
+  "hnsw_build_s_largest": 16.705657320000682,
+  "ivf_build_s_largest": 22.44993737200093,
+  "sample200_halfwidth": 0.03521793651212646,
+  "sample25_halfwidth": 0.09961136690848782,
+  "runtime_s": 72.64162780800143
+}

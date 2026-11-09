@@ -1,0 +1,9 @@
+{
+  "dataset": "news",
+  "nprobe": 1,
+  "k": 10,
+  "corr_margin_recall": 0.6574747415825424,
+  "mean_recall_bottom_quartile_margin": 0.2204,
+  "mean_recall_top_quartile_margin": 0.7304,
+  "mean_recall_all": 0.4233
+}

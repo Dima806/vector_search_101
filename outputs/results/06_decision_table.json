@@ -1,0 +1,32 @@
+[
+  {
+    "situation": "under a few hundred thousand vectors, latency budget met",
+    "choose": "exact search (numpy / faiss Flat)",
+    "why": "always right, nothing to tune or monitor, no build step",
+    "evidence": "notebook 01: linear in N; retrieval_arena: fine below ~500K"
+  },
+  {
+    "situation": "best recall per millisecond; memory available",
+    "choose": "HNSW",
+    "why": "graph walk scores a tiny, shrinking share of the database",
+    "evidence": "notebook 05: 43x exact at recall ≥ 0.9, 1621 B/vector"
+  },
+  {
+    "situation": "memory or build time matter more than the last bit of speed",
+    "choose": "IVF",
+    "why": "k-means trains in seconds; costs an id per vector (8 B) plus the centroids over the raw floats",
+    "evidence": "notebook 05: 6x exact at recall ≥ 0.9, 1552 B/vector"
+  },
+  {
+    "situation": "memory is the hard limit",
+    "choose": "PQ / IVFPQ (optionally re-rank the shortlist)",
+    "why": "tens of times smaller; distances from codes",
+    "evidence": "notebook 03: 27x smaller at recall 0.68"
+  },
+  {
+    "situation": "streaming inserts, no training, set or near-duplicate similarity",
+    "choose": "LSH",
+    "why": "no training, trivial inserts; dominated on dense embeddings",
+    "evidence": "notebook 05: needs far more work for the same recall; hashing_101 for sets"
+  }
+]

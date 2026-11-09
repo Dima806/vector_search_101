@@ -1,0 +1,9 @@
+{
+  "exact_matches_naive_and_faiss": true,
+  "latency_ms_at_500k_numpy": 61.139695000292704,
+  "latency_ms_at_500k_faiss": 62.97577299937984,
+  "extrapolated_ms_1m": 123.28110205022726,
+  "extrapolated_ms_100m": 12342.974608145116,
+  "fit_r2": 0.9992277605068886,
+  "runtime_s": 30.159657704999518
+}

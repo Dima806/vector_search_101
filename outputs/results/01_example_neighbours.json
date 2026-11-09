@@ -1,0 +1,57 @@
+{
+  "query": "\"The Divine Invasion\" God invades Earth by making a young woman pregnant as she returns from another star system.",
+  "query_index": 1,
+  "k": 10,
+  "neighbours": [
+    {
+      "rank": 1,
+      "distance": 0.7720000147819519,
+      "sentence": "So Mary comes up with this ridiculous story about God making her pregnant."
+    },
+    {
+      "rank": 2,
+      "distance": 1.0099999904632568,
+      "sentence": "But it doesn't imply that God's sperm was involved."
+    },
+    {
+      "rank": 3,
+      "distance": 1.0329999923706055,
+      "sentence": "At least it has a fairly popular orginating premise; everyone I'd mention the idea to thought it was either divinely inspired or at least past due for delivery."
+    },
+    {
+      "rank": 4,
+      "distance": 1.0360000133514404,
+      "sentence": "I could just see it now: Mary gets pregnant out of wedlock so to save face she and Joseph say that it was God that got her pregnant and then the baby turns out to be deformed, or even worse, stillborn!"
+    },
+    {
+      "rank": 5,
+      "distance": 1.0479999780654907,
+      "sentence": "The Bible in one place refers to God as being like a mother."
+    },
+    {
+      "rank": 6,
+      "distance": 1.0579999685287476,
+      "sentence": "Ye Gods, that would be the end of civilization as we know it."
+    },
+    {
+      "rank": 7,
+      "distance": 1.069000005722046,
+      "sentence": "And now divine nature is now within lives our very being--and us and God communicate with each through his unifying Holy Spirit."
+    },
+    {
+      "rank": 8,
+      "distance": 1.0709999799728394,
+      "sentence": "Shouldn't we give her a hand in her exhaustive job of preparing us for the second coming of her Son as she has been conceived without sin to bear the Son of God in her womb?"
+    },
+    {
+      "rank": 9,
+      "distance": 1.0709999799728394,
+      "sentence": "In the beginning God created the heavens and the earth."
+    },
+    {
+      "rank": 10,
+      "distance": 1.0809999704360962,
+      "sentence": "Also, she has been preparing the new Eden, by reversing the deed of the ancient Eve."
+    }
+  ]
+}

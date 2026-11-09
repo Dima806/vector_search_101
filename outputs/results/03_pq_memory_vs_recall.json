@@ -1,0 +1,88 @@
+{
+  "dataset": "news",
+  "n": 50000,
+  "d": 384,
+  "k": 10,
+  "nbits": 8,
+  "rows": [
+    {
+      "label": "Exact (float32)",
+      "bytes_per_vector": 1536.0,
+      "recall": 1.0,
+      "compression_vs_exact": 1.0
+    },
+    {
+      "label": "IVF-Flat (nlist=256)",
+      "bytes_per_vector": 1551.86432,
+      "recall": null,
+      "compression_vs_exact": 0.9897772506297459
+    },
+    {
+      "label": "PQ 8 B code",
+      "bytes_per_vector": 15.86432,
+      "recall": 0.22510000000000002,
+      "compression_vs_exact": 96.82104243989028
+    },
+    {
+      "label": "PQ 16 B code",
+      "bytes_per_vector": 23.86432,
+      "recall": 0.4046,
+      "compression_vs_exact": 64.36387041407424
+    },
+    {
+      "label": "PQ 32 B code",
+      "bytes_per_vector": 39.86432,
+      "recall": 0.6059000000000001,
+      "compression_vs_exact": 38.53069612124326
+    },
+    {
+      "label": "PQ 48 B code",
+      "bytes_per_vector": 55.86432,
+      "recall": 0.6817,
+      "compression_vs_exact": 27.495188342040144
+    },
+    {
+      "label": "PQ 96 B code",
+      "bytes_per_vector": 103.86432,
+      "recall": 0.8266000000000001,
+      "compression_vs_exact": 14.788524105294291
+    }
+  ],
+  "sweep": [
+    {
+      "n_subvectors": 8,
+      "recall": 0.22510000000000002,
+      "nbytes": 793216,
+      "bytes_per_vector": 15.86432,
+      "build_s": 2.7599163459999545
+    },
+    {
+      "n_subvectors": 16,
+      "recall": 0.4046,
+      "nbytes": 1193216,
+      "bytes_per_vector": 23.86432,
+      "build_s": 4.593717634999848
+    },
+    {
+      "n_subvectors": 32,
+      "recall": 0.6059000000000001,
+      "nbytes": 1993216,
+      "bytes_per_vector": 39.86432,
+      "build_s": 8.254666585999985
+    },
+    {
+      "n_subvectors": 48,
+      "recall": 0.6817,
+      "nbytes": 2793216,
+      "bytes_per_vector": 55.86432,
+      "build_s": 11.984754551999686
+    },
+    {
+      "n_subvectors": 96,
+      "recall": 0.8266000000000001,
+      "nbytes": 5193216,
+      "bytes_per_vector": 103.86432,
+      "build_s": 23.114390096000534
+    }
+  ]
+}

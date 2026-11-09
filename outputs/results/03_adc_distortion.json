@@ -1,0 +1,16 @@
+{
+  "dataset": "news",
+  "query_index": 0,
+  "panels": [
+    {
+      "n_subvectors": 8,
+      "spearman_all_vectors": 0.6985012781928048,
+      "true_top10_in_adc_top10": 1
+    },
+    {
+      "n_subvectors": 48,
+      "spearman_all_vectors": 0.8800708650839749,
+      "true_top10_in_adc_top10": 5
+    }
+  ]
+}

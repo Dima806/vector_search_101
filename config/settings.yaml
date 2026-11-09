@@ -1,0 +1,95 @@
+# vector_search_101 — every knob and seed lives here (see .claude/CLAUDE.md §7).
+# Nothing tunable is hard-coded in src/, the notebooks or the app.
+# Override any value from the environment: VS101_<SECTION>__<KEY>=value (e.g. VS101_EVAL__K=20).
+
+seed: 42
+
+datasets:
+  n_queries: 1000          # held out, disjoint from the base vectors
+  k_gt: 100                # exact neighbours stored per query (>= largest k ever evaluated)
+  real:
+    name: news             # sentences from the 20 Newsgroups corpus (scikit-learn download)
+    model: sentence-transformers/all-MiniLM-L6-v2
+    max_n: 50000           # base vectors kept after de-duplication
+    batch_size: 128
+    min_chars: 40
+    max_chars: 300
+  synthetic:
+    - name: clustered      # Gaussian mixture on a 16-d subspace of 128-d: structure ANN can exploit
+      n: 200000
+      d: 128
+      n_clusters: 200
+      intrinsic_dim: 16
+      cluster_std: 0.35
+      noise: 0.05
+    - name: isotropic      # one fat Gaussian in 128-d: the no-structure control
+      n: 50000
+      d: 128
+      n_clusters: 1
+      intrinsic_dim: 128
+      cluster_std: 1.0
+      noise: 0.0
+
+eval:
+  k: 10
+
+exact:
+  block_mb: 256            # cap on each (queries x base) distance block
+
+scaling:                   # notebook 01: exact search as the database grows
+  sizes: [10000, 30000, 100000, 200000, 500000]
+  d: 384
+  n_queries: 50
+  extrapolate_to: [1000000, 10000000, 100000000]
+
+ivf:
+  nlist: 256               # ~ sqrt(N) for N = 50k (faiss guideline 4-16 x sqrt(N) is for N >> 1M)
+  nprobe_sweep: [1, 2, 4, 8, 16, 32, 64, 128, 256]
+  train_points_per_centroid: 64
+  kmeans_max_iter: 20
+  toy_nlist: 12            # 2-D illustration in notebook 02
+
+pq:
+  n_subvectors: 48         # 384 / 48 = 8 dims per sub-vector -> 48 bytes per vector
+  n_subvectors_sweep: [8, 16, 32, 48, 96]
+  nbits: 8                 # 256 codewords per sub-space, one uint8 per sub-vector
+  train_size: 20000
+  kmeans_max_iter: 20
+
+ivfpq:
+  nlist: 256
+  n_subvectors: 48
+  nprobe_sweep: [1, 2, 4, 8, 16, 32, 64, 128, 256]
+
+hnsw:
+  m: 16                    # links per node (2m on layer 0)
+  m_sweep: [4, 8, 16, 32]
+  ef_construction: 64
+  ef_search: 64
+  ef_search_sweep: [10, 16, 32, 64, 128, 256]
+  max_scratch_n: 20000     # pure-Python build cap; larger N uses hnswlib / faiss
+  sweep_n: 10000           # base size for the from-scratch m sweep
+  ladder: [1000, 2000, 4000, 8000, 16000]   # sub-linearity check, from one incremental build
+
+lsh:
+  rows: 8                  # bits per band (calibrated on news: r=8 spans recall 0.15-0.9)
+  bands: 16
+  bands_sweep: [4, 8, 16, 32, 64, 128]
+
+triangle:                  # notebook 05
+  scratch_n: 20000         # shared base for every from-scratch index (the scratch HNSW cap)
+  nlist: 128               # IVF / IVFPQ lists for that base (~ sqrt(N))
+  hnswlib_m_sweep: [8, 16, 32]
+
+decision:                  # notebook 06
+  sizes: [12500, 25000, 50000, 100000, 200000]   # prefixes of the clustered set
+  target_recall: 0.95
+  ef_candidates: [16, 24, 32, 48, 64, 96, 128, 192, 256]
+  nprobe_candidates: [1, 2, 4, 8, 16, 32, 64, 128]
+  sample_sizes: [25, 50, 100, 200, 400, 1000]
+  sample_repeats: 30
+
+bench:
+  threads: 1               # every engine pinned to the same thread count
+  warmup: 3
+  max_queries: 300         # queries timed one by one for wall-clock latency

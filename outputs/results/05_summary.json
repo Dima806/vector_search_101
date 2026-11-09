@@ -1,0 +1,23 @@
+{
+  "work_families_on_frontier": [
+    "exact",
+    "hnsw",
+    "ivf",
+    "ivfpq",
+    "pq"
+  ],
+  "work_fully_dominated": [
+    "lsh"
+  ],
+  "wall_families_on_frontier": [
+    "exact",
+    "hnsw",
+    "ivf",
+    "ivfpq",
+    "pq"
+  ],
+  "wall_fully_dominated": [],
+  "single_family_dominates_work": false,
+  "single_family_dominates_wall": false,
+  "runtime_s": 308.2352742809999
+}

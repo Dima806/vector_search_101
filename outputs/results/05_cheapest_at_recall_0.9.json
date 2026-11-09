@@ -1,0 +1,107 @@
+{
+  "target": 0.9,
+  "k": 10,
+  "work_scratch": [
+    {
+      "index": "exact",
+      "reaches_target": true,
+      "params": "{}",
+      "recall": 1.0,
+      "speed": 1.0,
+      "bytes_per_vector": 1536.0,
+      "build_s": 0.012811721000616672
+    },
+    {
+      "index": "ivf",
+      "reaches_target": true,
+      "params": "{\"nlist\": 128, \"nprobe\": 16}",
+      "recall": 0.9178,
+      "speed": 7.295465248233676,
+      "bytes_per_vector": 1553.8304,
+      "build_s": 0.34124819399949047
+    },
+    {
+      "index": "pq",
+      "reaches_target": false,
+      "params": "{\"n_subvectors\": 96}",
+      "recall": 0.8319000000000001,
+      "speed": 1.0,
+      "bytes_per_vector": 115.6608,
+      "build_s": 21.145528438999463
+    },
+    {
+      "index": "ivfpq",
+      "reaches_target": false,
+      "params": "{\"n_subvectors\": 48, \"nlist\": 128, \"nprobe\": 128}",
+      "recall": 0.6804,
+      "speed": 0.9936406995230525,
+      "bytes_per_vector": 85.4912,
+      "build_s": 11.45508230499945
+    },
+    {
+      "index": "hnsw",
+      "reaches_target": true,
+      "params": "{\"ef_construction\": 64, \"ef_search\": 32, \"m\": 16}",
+      "recall": 0.9452999999999999,
+      "speed": 32.70137918066694,
+      "bytes_per_vector": 1680.2656,
+      "build_s": null
+    },
+    {
+      "index": "lsh",
+      "reaches_target": true,
+      "params": "{\"bands\": 128, \"rows\": 8}",
+      "recall": 0.9681000000000002,
+      "speed": 2.4840875561372737,
+      "bytes_per_vector": 2688.0,
+      "build_s": 0.5075434169993969
+    }
+  ],
+  "wallclock_compiled": [
+    {
+      "index": "exact",
+      "reaches_target": true,
+      "params": "{}",
+      "recall": 1.0,
+      "speed": 0.9933915833271378,
+      "bytes_per_vector": 1536.0009,
+      "build_s": 0.044611852999878465
+    },
+    {
+      "index": "ivf",
+      "reaches_target": true,
+      "params": "{\"nlist\": 256, \"nprobe\": 32}",
+      "recall": 0.9471,
+      "speed": 7.735214807864366,
+      "bytes_per_vector": 1551.90806,
+      "build_s": 10.718825219999417
+    },
+    {
+      "index": "pq",
+      "reaches_target": false,
+      "params": "{\"n_subvectors\": 96}",
+      "recall": 0.8241000000000002,
+      "speed": 2.1274051039811304,
+      "bytes_per_vector": 103.86604,
+      "build_s": 57.34491725599946
+    },
+    {
+      "index": "ivfpq",
+      "reaches_target": false,
+      "params": "{\"n_subvectors\": 48, \"nlist\": 256, \"nprobe\": 256}",
+      "recall": 0.6678,
+      "speed": 2.289891358329192,
+      "bytes_per_vector": 71.7732,
+      "build_s": 6.995913758000825
+    },
+    {
+      "index": "hnsw",
+      "reaches_target": true,
+      "params": "{\"ef_construction\": 64, \"ef_search\": 64, \"m\": 8}",
+      "recall": 0.9226000000000001,
+      "speed": 43.35301913418668,
+      "bytes_per_vector": 1621.23272,
+      "build_s": 7.135773547001008
+    }
+  ]
+}

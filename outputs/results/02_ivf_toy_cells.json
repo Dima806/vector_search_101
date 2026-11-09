@@ -1,0 +1,30 @@
+{
+  "n": 2000,
+  "nlist": 12,
+  "k": 10,
+  "query_index": 19,
+  "query": [
+    -0.900884211063385,
+    -0.42210885882377625
+  ],
+  "panels": [
+    {
+      "nprobe": 1,
+      "probed_lists": [
+        0
+      ],
+      "true_found": 5,
+      "vectors_scanned": 195
+    },
+    {
+      "nprobe": 3,
+      "probed_lists": [
+        0,
+        1,
+        8
+      ],
+      "true_found": 10,
+      "vectors_scanned": 594
+    }
+  ]
+}

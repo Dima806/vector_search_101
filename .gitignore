@@ -218,3 +218,11 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+.llm/
+.agents/
+agent/
+.claude/skills/
+# vector_search_101: caches and nbconvert copies (CLAUDE.md §15.6)
+data/
+*.nbconvert.ipynb

@@ -1,0 +1,12 @@
+{
+  "pq48_bytes_per_vector": 55.86432,
+  "pq48_compression": 27.495188342040144,
+  "pq48_recall": 0.6817,
+  "pq8_compression": 96.82104243989028,
+  "pq8_recall": 0.22510000000000002,
+  "ivfpq_plateau_recall": 0.6698,
+  "ivfpq_bytes": 3586432,
+  "exact_bytes": 76800000,
+  "max_recall_gap_vs_faiss": 0.005300000000000082,
+  "runtime_s": 209.23352995000096
+}

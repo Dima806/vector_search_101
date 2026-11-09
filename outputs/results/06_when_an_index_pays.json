@@ -1,0 +1,138 @@
+{
+  "dataset": "clustered",
+  "d": 128,
+  "k": 10,
+  "target_recall": 0.95,
+  "queries_timed": 300,
+  "machine": {
+    "cpu": "Intel(R) Xeon(R) Platinum 8370C CPU @ 2.80GHz",
+    "logical_cpus": 2,
+    "threads": 1,
+    "python": "3.14.2",
+    "numpy": "2.5.4",
+    "faiss": "1.15.1",
+    "hnswlib": "0.8.0"
+  },
+  "rows": [
+    {
+      "n": 12500,
+      "method": "exact (faiss Flat)",
+      "knob": "-",
+      "recall": 1.0,
+      "build_s": 0.003890600999511662,
+      "latency_ms": 0.2801635000651004
+    },
+    {
+      "n": 12500,
+      "method": "IVF (faiss)",
+      "knob": "nlist=128, nprobe=1",
+      "recall": 0.9856666666666666,
+      "build_s": 0.49963428000046406,
+      "latency_ms": 0.018182500753027853
+    },
+    {
+      "n": 12500,
+      "method": "HNSW (hnswlib)",
+      "knob": "m=16, ef=16",
+      "recall": 0.9973333333333333,
+      "build_s": 0.5691905220010085,
+      "latency_ms": 0.01693400008662138
+    },
+    {
+      "n": 25000,
+      "method": "exact (faiss Flat)",
+      "knob": "-",
+      "recall": 1.0,
+      "build_s": 0.0028249360002519097,
+      "latency_ms": 0.4296340002838406
+    },
+    {
+      "n": 25000,
+      "method": "IVF (faiss)",
+      "knob": "nlist=128, nprobe=1",
+      "recall": 0.9636666666666668,
+      "build_s": 1.0167747210016387,
+      "latency_ms": 0.027853499886987265
+    },
+    {
+      "n": 25000,
+      "method": "HNSW (hnswlib)",
+      "knob": "m=16, ef=16",
+      "recall": 0.986,
+      "build_s": 0.9545861699989473,
+      "latency_ms": 0.018412500139675103
+    },
+    {
+      "n": 50000,
+      "method": "exact (faiss Flat)",
+      "knob": "-",
+      "recall": 1.0,
+      "build_s": 0.006343105998894316,
+      "latency_ms": 1.1001960001522093
+    },
+    {
+      "n": 50000,
+      "method": "IVF (faiss)",
+      "knob": "nlist=256, nprobe=2",
+      "recall": 0.9893333333333334,
+      "build_s": 3.8271382669991,
+      "latency_ms": 0.03157849914714461
+    },
+    {
+      "n": 50000,
+      "method": "HNSW (hnswlib)",
+      "knob": "m=16, ef=16",
+      "recall": 0.9843333333333334,
+      "build_s": 2.393438700999468,
+      "latency_ms": 0.02456499987602001
+    },
+    {
+      "n": 100000,
+      "method": "exact (faiss Flat)",
+      "knob": "-",
+      "recall": 1.0,
+      "build_s": 0.008571966998715652,
+      "latency_ms": 3.71011399965937
+    },
+    {
+      "n": 100000,
+      "method": "IVF (faiss)",
+      "knob": "nlist=256, nprobe=2",
+      "recall": 0.985,
+      "build_s": 5.236947306999355,
+      "latency_ms": 0.04941750012221746
+    },
+    {
+      "n": 100000,
+      "method": "HNSW (hnswlib)",
+      "knob": "m=16, ef=16",
+      "recall": 0.9560000000000001,
+      "build_s": 6.615121558001192,
+      "latency_ms": 0.03301199922134401
+    },
+    {
+      "n": 200000,
+      "method": "exact (faiss Flat)",
+      "knob": "-",
+      "recall": 1.0,
+      "build_s": 0.06969226100045489,
+      "latency_ms": 9.82039500013343
+    },
+    {
+      "n": 200000,
+      "method": "IVF (faiss)",
+      "knob": "nlist=512, nprobe=4",
+      "recall": 0.9943333333333334,
+      "build_s": 22.44993737200093,
+      "latency_ms": 0.12473449987737695
+    },
+    {
+      "n": 200000,
+      "method": "HNSW (hnswlib)",
+      "knob": "m=16, ef=24",
+      "recall": 0.9663333333333333,
+      "build_s": 16.705657320000682,
+      "latency_ms": 0.05596050050371559
+    }
+  ]
+}

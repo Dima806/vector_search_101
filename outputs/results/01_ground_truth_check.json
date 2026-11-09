@@ -1,0 +1,7 @@
+{
+  "queries_checked": 200,
+  "k": 10,
+  "library_vs_naive_identical_rows": 200,
+  "library_vs_faiss_recall": 1.0,
+  "library_vs_cached_ground_truth_recall": 1.0
+}

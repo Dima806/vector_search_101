@@ -1,0 +1,8 @@
+{
+  "n": 50000,
+  "k": 10,
+  "kth_distance": 1.081451654434204,
+  "median_distance": 1.924377202987671,
+  "share_of_database_wanted": 0.0002,
+  "distances_computed": 50000
+}

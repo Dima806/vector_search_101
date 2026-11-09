@@ -1,0 +1,27 @@
+{
+  "query": "\"The Divine Invasion\" God invades Earth by making a young woman pregnant as she returns from another star system.",
+  "n": 20000,
+  "m": 16,
+  "ef_search": 64,
+  "level_counts": [
+    18764,
+    1143,
+    89,
+    4
+  ],
+  "vectors_scored": 1116,
+  "greedy_hops_per_upper_layer": {
+    "3": 1,
+    "2": 1,
+    "1": 2
+  },
+  "layer0_expansions": 70,
+  "recall_this_query": 1.0,
+  "neighbours": [
+    "So Mary comes up with this ridiculous story about God making her pregnant.",
+    "At least it has a fairly popular orginating premise; everyone I'd mention the idea to thought it was either divinely inspired or at least past due for delivery.",
+    "The Bible in one place refers to God as being like a mother.",
+    "And now divine nature is now within lives our very being--and us and God communicate with each through his unifying Holy Spirit.",
+    "Also, she has been preparing the new Eden, by reversing the deed of the ancient Eve."
+  ]
+}

@@ -1,0 +1,58 @@
+[
+  {
+    "index": "IVF",
+    "knob": "nprobe ↑ (search time)",
+    "recall": "↑",
+    "speed": "↓",
+    "memory": "–",
+    "build": "–"
+  },
+  {
+    "index": "IVF",
+    "knob": "nlist ↑ (build time)",
+    "recall": "↓ at fixed nprobe",
+    "speed": "↑",
+    "memory": "≈",
+    "build": "↑"
+  },
+  {
+    "index": "PQ",
+    "knob": "n_subvectors ↑ (bytes/vector)",
+    "recall": "↑",
+    "speed": "↓ (more lookups)",
+    "memory": "↑",
+    "build": "↑"
+  },
+  {
+    "index": "HNSW",
+    "knob": "ef_search ↑ (search time)",
+    "recall": "↑",
+    "speed": "↓",
+    "memory": "–",
+    "build": "–"
+  },
+  {
+    "index": "HNSW",
+    "knob": "m ↑ (build time)",
+    "recall": "↑",
+    "speed": "↓ per hop, ↑ fewer hops",
+    "memory": "↑",
+    "build": "↑"
+  },
+  {
+    "index": "HNSW",
+    "knob": "ef_construction ↑ (build time)",
+    "recall": "↑",
+    "speed": "–",
+    "memory": "–",
+    "build": "↑"
+  },
+  {
+    "index": "LSH",
+    "knob": "bands ↑",
+    "recall": "↑",
+    "speed": "↓",
+    "memory": "↑",
+    "build": "↑"
+  }
+]

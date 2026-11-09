@@ -1,0 +1,34 @@
+[
+  {
+    "index": "PQ 48 B",
+    "scratch_recall": 0.6817,
+    "faiss_recall": 0.687,
+    "scratch_bytes": 2793216,
+    "faiss_bytes": 2793302,
+    "recall_gap": 0.005300000000000082
+  },
+  {
+    "index": "IVFPQ nprobe=4",
+    "scratch_recall": 0.5529000000000001,
+    "faiss_recall": 0.5548000000000001,
+    "scratch_bytes": 3586432,
+    "faiss_bytes": 3588660,
+    "recall_gap": 0.0019000000000000128
+  },
+  {
+    "index": "IVFPQ nprobe=16",
+    "scratch_recall": 0.6349,
+    "faiss_recall": 0.6359000000000001,
+    "scratch_bytes": 3586432,
+    "faiss_bytes": 3588660,
+    "recall_gap": 0.001000000000000112
+  },
+  {
+    "index": "IVFPQ nprobe=64",
+    "scratch_recall": 0.6657000000000001,
+    "faiss_recall": 0.6635,
+    "scratch_bytes": 3586432,
+    "faiss_bytes": 3588660,
+    "recall_gap": 0.0022000000000000908
+  }
+]

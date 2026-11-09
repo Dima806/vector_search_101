@@ -1,0 +1,32 @@
+{
+  "n": 20000,
+  "m": 16,
+  "ef_construction": 64,
+  "rows": [
+    {
+      "ef_search": 16,
+      "scratch_recall": 0.8656666666666668,
+      "hnswlib_recall": 0.8620000000000001,
+      "scratch_work": 391.08666666666664,
+      "recall_gap": 0.003666666666666707
+    },
+    {
+      "ef_search": 64,
+      "scratch_recall": 0.9776666666666669,
+      "hnswlib_recall": 0.9773333333333335,
+      "scratch_work": 988.9933333333333,
+      "recall_gap": 0.00033333333333340764
+    },
+    {
+      "ef_search": 256,
+      "scratch_recall": 0.9973333333333333,
+      "hnswlib_recall": 0.9979999999999999,
+      "scratch_work": 2799.1033333333335,
+      "recall_gap": 0.0006666666666665932
+    }
+  ],
+  "scratch_bytes": 33605312,
+  "hnswlib_bytes": 33692712,
+  "scratch_build_s": 50.699043171001904,
+  "hnswlib_build_s": 2.986941585999375
+}
